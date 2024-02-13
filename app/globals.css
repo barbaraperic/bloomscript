@@ -6,7 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --duration: 1s;
+  --duration: 0.5s;
+  --stagger: 0.2s;
+  --interval: calc(var(--duration) - var(--stagger));
   --easing: cubic-bezier(0.5,0,0.5,1);
 }
 
