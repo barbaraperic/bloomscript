@@ -14,12 +14,13 @@ module.exports = {
       },
       animation: {
         'slide-up': "slide-up var(--duration) calc(var(--interval) * var(--i)) forwards",
-        'shake': 'shake var(--duration) var(--easing)'
+        'shake': 'shake var(--duration) var(--easing)',
+        'dip': 'dip 300ms'
       },
       keyframes: {
         "slide-up": {
           '0%': { transform: 'translateY(10%)', opacity: '0'},
-          '100%': { transform: 'translateY(0)', opacity: '1'}
+          '100%': { opacity: '1', transitionProperty: 'all'}
         },
         "shake": {
           '0%': { transform: 'none'},
@@ -27,7 +28,12 @@ module.exports = {
           '50%': { transform: 'translateX(5%)'},
           '70%': { transform: 'translateX(-5%)'}
 ,         '100%': { transform: 'none'}
-        }
+        },
+        'dip': {
+          '0%': { transform: 'translateY(0)'},
+          '100%': { transform: 'translateY(15%)'}
+        },
+        
       }
     },
   },

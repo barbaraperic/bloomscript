@@ -14,7 +14,7 @@ export default function Home() {
       {cards.map((card, index) => (
         <div key={index} style={{
             '--i': index
-          } as any} className='animate-slide-up opacity-0 hover:scale-105 flex justify-center items-center transition-all h-20 w-20 border border-black rounded-lg cursor-pointer'>{card}</div>
+          } as any} className='animate-slide-up opacity-0 flex justify-center items-center h-20 w-20 border border-black rounded-lg cursor-pointer hover:scale-105 transition-all'>{card}</div>
       ))}
         
        

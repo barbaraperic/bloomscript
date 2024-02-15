@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={quicksand.className}>{children}</body>
+    <html lang="en" className='h-full w-full'>
+      <body className={`${quicksand.className} p-10`}>{children}</body>
     </html>
   )
 }
