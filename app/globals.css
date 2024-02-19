@@ -30,6 +30,97 @@ body {
         rgb(var(--background-start-rgb));
 }
 
+.pageHeader {
+    view-transition-name: page-header;
+}
+
+.pageContent {
+    view-transition-name: page-content;
+}
+
+/* Views Animation */
+::view-transition-old(root) {
+    animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
+}
+
+::view-transition-new(root) {
+    animation: fade-and-scale-in 1s ease-in-out 1 forwards;
+}
+
+::view-transition-old(page-header) {
+    animation: hide 1s ease-in-out 1 forwards;
+}
+
+::view-transition-new(page-header) {
+    animation: slide-right 2s ease-in-out 1 forwards;
+}
+
+::view-transition-old(page-content) {
+    animation: hide 1s ease-in-out 1 forwards;
+}
+
+::view-transition-new(page-content) {
+    animation: slide-left 2.5s ease-in-out 1 forwards;
+}
+
+@keyframes fade-and-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-and-scale-right {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Second animation */
+@keyframes slide-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 @keyframes content {
     from {
         opacity: 0;
@@ -40,7 +131,7 @@ body {
         transform: none;
     }
 }
-
+/* 
 .ui-figure {
     display: flex;
     justify-content: center;
@@ -72,9 +163,9 @@ body {
         font-weight: bold;
         color: white;
     }
-}
+} */
 
-[data-flip] {
+/* [data-flip] {
     &[data-flip-bg][data-flip='invert']:before,
     &:not([data-flip-bg])[data-flip='invert'] {
         transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
@@ -86,7 +177,7 @@ body {
         transition: transform 0.3s;
         transform: none;
     }
-}
+} */
 
 html,
 body {
@@ -117,7 +208,8 @@ body {
     grid-column-gap: 0.3rem;
     grid-row-gap: 0.3rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex: 1;
 }
 
 .feature {
@@ -127,38 +219,38 @@ body {
     background: rgba(255, 255, 255, 0.125);
     border-radius: 0.5rem;
     overflow: hidden;
+    cursor: pointer;
+}
+.feature::before,
+.feature::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    inset: 0px;
+    border-radius: inherit;
+    background: radial-gradient(
+        800px circle at var(--x-px) var(--y-px),
+        rgba(255, 255, 255, 0.3),
+        transparent 40%
+    );
+}
 
-    &:before,
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        inset: 0px;
-        border-radius: inherit;
-        background: radial-gradient(
-            800px circle at var(--x-px) var(--y-px),
-            rgba(255, 255, 255, 0.3),
-            transparent 40%
-        );
-    }
+.feature::before {
+    z-index: 1;
+}
 
-    &:before {
-        z-index: 1;
-    }
+.feature::after {
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+}
 
-    &:after {
-        opacity: 0;
-        z-index: 2;
-        transition: opacity 0.4s ease;
-    }
-
-    &:hover:after {
-        opacity: 1;
-    }
+.feature:hover::after {
+    opacity: 1;
 }
 
 .feature-content {
@@ -172,14 +264,5 @@ body {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 0.5rem;
-    padding: 0 1rem 0 2rem;
-
-    > strong {
-        align-self: self-end;
-        font-size: 125%;
-    }
-
-    > span {
-        opacity: 0.7;
-    }
+    padding: 1rem;
 }
