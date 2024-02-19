@@ -6,15 +6,18 @@ const loginStateMachine = createMachine({
   states: {
     init: {
       on: {
-        ACTIVE: {
+        "ACTIVE": {
           target: 'active'
         }
       }
     },
     active: {
       on: {
-        SUBMIT: {
+        "SUBMIT": {
           target: 'success'
+        },
+        "NO_INPUT": {
+          target: 'init'
         }
       }
     },

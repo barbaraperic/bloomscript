@@ -15,7 +15,8 @@ module.exports = {
       animation: {
         'slide-up': "slide-up var(--duration) calc(var(--interval) * var(--i)) forwards",
         'shake': 'shake var(--duration) var(--easing)',
-        'dip': 'dip 300ms'
+        'content': 'content 0.3s 0.3s both',
+        'play': 'play 0.5s'
       },
       keyframes: {
         "slide-up": {
@@ -33,6 +34,24 @@ module.exports = {
           '0%': { transform: 'translateY(0)'},
           '100%': { transform: 'translateY(15%)'}
         },
+        // 'content': {
+        //   from: {
+        //     opacity: 0,
+        //     transform: 'translateX(-2rem)'
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     transform: 'none'
+        //   }
+        // },
+        'play': {
+          '0%': {
+            transform: 'translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(var(--dw), var(--dh))'
+          },
+          '100%': {
+            transform: 'translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(var(--dw), var(--dh))'
+          }
+        }
         
       }
     },
