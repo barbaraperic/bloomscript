@@ -6,7 +6,7 @@ const Title = ({ children }: { children: React.ReactNode }) => {
     return (
         <motion.div
             animate={{ '--base-hue': 210 } as any}
-            initial={{ '--base-hue': 180 } as any}
+            initial={{ '--base-hue': 190 } as any}
             transition={{ duration: 10, loop: Infinity, ease: 'linear' }}
             style={{ width: '100%', height: '100%', textAlign: 'center' }}
         >
