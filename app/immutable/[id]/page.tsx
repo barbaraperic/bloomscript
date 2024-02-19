@@ -8,7 +8,7 @@ export default function ImmutableItemPage({
 }) {
     const { id: title } = params
     return (
-        <main className="w-full h-full flex min-h-screen flex-col items-center p-10 space-y-5">
+        <main className="w-full h-full flex min-h-screen flex-col items-center space-y-5">
             <Modal title={title} />
         </main>
     )

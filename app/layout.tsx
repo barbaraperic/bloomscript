@@ -17,7 +17,7 @@ export default function RootLayout({
         <html lang="en" className="h-full w-full">
             <body
                 suppressHydrationWarning={true}
-                className={`${quicksand.className} p-10`}
+                className={`${quicksand.className}`}
             >
                 {children}
             </body>
