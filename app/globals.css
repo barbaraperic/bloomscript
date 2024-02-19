@@ -30,15 +30,10 @@ body {
         rgb(var(--background-start-rgb));
 }
 
-.pageHeader {
-    view-transition-name: page-header;
-}
-
-.pageContent {
-    view-transition-name: page-content;
-}
-
 /* Views Animation */
+::view-transition-old(root) {
+    animation: fade-and-scale-out 0.1s ease-in-out 1 forwards;
+}
 
 ::view-transition-new(root) {
     animation: fade-and-scale-in 0.1s ease-in-out 1 forwards;
@@ -52,29 +47,17 @@ body {
 
     to {
         opacity: 1;
-        transform: scale(1);
     }
 }
 
-@keyframes hide {
+@keyframes fade-and-scale-out {
     from {
         opacity: 1;
     }
 
     to {
         opacity: 0;
-    }
-}
-
-@keyframes fade-and-scale-right {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: scale(0);
+        transform: translateY(100%);
     }
 }
 
@@ -222,4 +205,31 @@ body {
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 0.5rem;
     padding: 1rem;
+}
+
+.links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
+    transition-duration: 300ms;
+}
+
+.links:hover {
+    color: hsl(236, 11%, 60%);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
+    transition-duration: 300ms;
+}
+
+.links .link-item:hover {
+    color: white;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
+    transition-duration: 300ms;
 }
