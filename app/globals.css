@@ -32,11 +32,11 @@ body {
 
 /* Views Animation */
 ::view-transition-old(root) {
-    animation: fade-and-scale-out 0.1s ease-in-out 1 forwards;
+    animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
 }
 
 ::view-transition-new(root) {
-    animation: fade-and-scale-in 0.1s ease-in-out 1 forwards;
+    animation: fade-and-scale-in 0.5s ease-in-out 1 forwards;
 }
 
 @keyframes fade-and-scale-in {
@@ -126,6 +126,7 @@ body {
     margin: 0;
     padding: 0;
     background: #060606;
+    background-image: linear-gradient(to bottom right, #050507, #38393e);
 }
 
 body {

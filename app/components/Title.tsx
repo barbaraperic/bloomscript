@@ -13,7 +13,7 @@ const Title = ({ children }: { children: React.ReactNode }) => {
             <h2
                 style={{
                     cursor: 'pointer',
-                    color: `hsla(180, calc(var(--base-saturation) * 1%), 40%, 1)`,
+                    color: `hsla(40, calc(var(--base-saturation) * 1%), 40%, 1)`,
                     fontSize: '36px',
                     textTransform: 'uppercase',
                 }}
