@@ -1,4 +1,4 @@
-export const cards = [
+export const iteratorsList = [
     {
         id: 0,
         title: 'forEach',

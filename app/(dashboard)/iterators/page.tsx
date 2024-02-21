@@ -1,5 +1,5 @@
 import CardList from '@/app/components/CardList'
-import { cards } from '@/utils/iteratorsCardsList'
+import { iteratorsList } from '@/utils/iteratorsList'
 import Link from 'next/link'
 import { FiChevronLeft } from 'react-icons/fi'
 
@@ -9,8 +9,10 @@ export default function IteratorsPage() {
             <Link href="/" className="absolute left-10 top-16">
                 <FiChevronLeft className="text-white w-6 h-6 hover:text-opacity-50 transition-all" />
             </Link>
-            <h1 className="cursor-pointer text-2xl">Iterators array methods</h1>
-            <CardList cards={cards} />
+            <h1 className="cursor-pointer text-2xl uppercase">
+                iterators methods
+            </h1>
+            <CardList cards={iteratorsList} />
         </main>
     )
 }

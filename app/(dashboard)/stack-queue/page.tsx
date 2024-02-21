@@ -1,5 +1,5 @@
 import CardList from '@/app/components/CardList'
-import { cards } from '@/utils/mutableCardsList'
+import { stackAndQueueList } from '@/utils/stackAndQueueList'
 import Link from 'next/link'
 import { FiChevronLeft } from 'react-icons/fi'
 
@@ -9,8 +9,10 @@ export default async function StackQueuePage() {
             <Link href="/" className="absolute left-10 top-16">
                 <FiChevronLeft className="text-white w-6 h-6 hover:text-opacity-50 transition-all" />
             </Link>
-            <h1 className="cursor-pointer text-2xl mb-10">Stack and queue</h1>
-            <CardList cards={cards} />
+            <h1 className="cursor-pointer text-2xl mb-10 uppercase">
+                Stack & queue methods
+            </h1>
+            <CardList cards={stackAndQueueList} />
         </main>
     )
 }
