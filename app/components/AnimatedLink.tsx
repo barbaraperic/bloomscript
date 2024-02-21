@@ -12,7 +12,10 @@ export default function AnimatedLink({ href, children }: Props) {
         <Link
             href={href}
             passHref
-            // prefetch={true}
+            onClick={() => {
+                console.log('clicked')
+                animatedRoute(href)
+            }}
         >
             {children}
         </Link>
