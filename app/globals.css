@@ -215,9 +215,9 @@ body {
     padding: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
-    transition-duration: 200ms;
+    /* transition-property: all; */
+    /* transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0); */
+    /* transition-duration: 200ms; */
     grid-template-columns: min-content auto min-content;
     grid-auto-flow: column;
     display: grid;
@@ -233,14 +233,14 @@ body {
 
 .links:hover {
     color: hsl(236, 11%, 60%);
-    transition-property: all;
+    /* transition-property: all;
     transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
-    transition-duration: 300ms;
+    transition-duration: 300ms; */
 }
 
 .links li:hover {
     color: white;
-    transition-property: all;
+    /* transition-property: all;
     transition-timing-function: cubic-bezier(0.5, 0, 0.5, 0);
-    transition-duration: 300ms;
+    transition-duration: 300ms; */
 }
