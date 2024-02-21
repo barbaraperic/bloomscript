@@ -2,6 +2,7 @@
 import { FiX } from 'react-icons/fi'
 import useAnimatedRouter from '../hooks/useAnimatedRouter'
 import { usePathname } from 'next/navigation'
+import HighlightTitle from './HighlightTitle'
 
 export default function Modal({ title }: { title: string }) {
     const { animatedRoute } = useAnimatedRouter()
@@ -16,7 +17,9 @@ export default function Modal({ title }: { title: string }) {
 
     return (
         <div className="w-full h-full flex justify-center">
-            <h2 className="mt-10">{title}</h2>
+            <div className="mt-4">
+                <HighlightTitle className="mt-10" title={title} />{' '}
+            </div>
             <button
                 className="absolute right-4 top-4"
                 onClick={() => animatedRoute(`/${path}`)}

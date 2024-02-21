@@ -1,3 +1,4 @@
+import './prism-atom-dark.css'
 import './globals.css'
 import { Quicksand } from 'next/font/google'
 

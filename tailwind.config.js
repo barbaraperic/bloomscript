@@ -13,7 +13,7 @@ module.exports = {
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
             animation: {
-                'slide-up':
+                stagger:
                     'slide-up var(--duration) calc(var(--interval) * var(--i)) forwards',
                 shake: 'shake var(--duration) var(--easing)',
                 content: 'content 0.3s 0.3s both',
@@ -21,8 +21,8 @@ module.exports = {
             },
             keyframes: {
                 'slide-up': {
-                    '0%': { transform: 'translateY(-100%)', opacity: '0' },
-                    '100%': { opacity: '1', transitionProperty: 'all' },
+                    '0%': { transform: 'translateY(20%)', opacity: '0' },
+                    '100%': { opacity: '1' },
                 },
                 shake: {
                     '0%': { transform: 'none' },
