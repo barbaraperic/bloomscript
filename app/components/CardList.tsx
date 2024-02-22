@@ -24,7 +24,7 @@ export default function CardList({ cards }: { cards: any }) {
             {cards.map((card: any, index: number) => (
                 <div
                     ref={addToRef}
-                    onClick={() => animatedRoute(`${path}/${card.title}/`)}
+                    onClick={() => animatedRoute(`${path}/${card.title}`)}
                     className="feature"
                     key={index}
                 >

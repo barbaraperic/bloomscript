@@ -1,24 +1,23 @@
 import Link from 'next/link'
 import Title from './components/Title'
-import Syntax from './components/HighlightTitle'
 
 export default function Home() {
     const links = [
         {
             title: 'Iterators',
-            href: '/iterators',
+            href: 'iterators',
         },
         {
             title: 'Stack & queue',
-            href: '/stack-queue',
+            href: 'stack-queue',
         },
         {
             title: 'Extracting & inserting',
-            href: '/extract-insert',
+            href: 'extract-insert',
         },
         {
             title: 'Searching & sorting',
-            href: '/search-sort',
+            href: 'search-sort',
         },
     ]
 
@@ -32,7 +31,14 @@ export default function Home() {
                         className="animate-stagger whitespace-nowrap opacity-0"
                         style={{ '--i': index } as any}
                     >
-                        <Link href={link.href}>{link.title}</Link>
+                        <Link
+                            href={{
+                                pathname: '/methods',
+                                query: { key: link.href },
+                            }}
+                        >
+                            {link.title}
+                        </Link>
                     </li>
                 ))}
             </ul>
