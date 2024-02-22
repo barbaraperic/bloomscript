@@ -5,8 +5,11 @@ import { Quicksand } from 'next/font/google'
 const quicksand = Quicksand({ subsets: ['latin'] })
 
 export const metadata = {
-    title: 'JS tutorial',
-    description: 'JavaScript tutorial',
+    title: 'bloomscript',
+    description: 'JavaScript array methods',
+    icons: {
+        icon: '/icon.ico',
+    },
 }
 
 export default function RootLayout({
