@@ -23,13 +23,13 @@ export default function Home() {
     ]
 
     return (
-        <main className="w-full relative flex min-h-screen flex-col justify-center items-center p-10 space-y-5">
+        <main className="w-full text-center relative flex min-h-screen flex-col justify-center items-center p-10 space-y-5">
             <Title>JavaScript array methods</Title>
             <ul className="links">
                 {links.map((link, index) => (
                     <li
                         key={index}
-                        className="animate-stagger opacity-0"
+                        className="animate-stagger whitespace-nowrap opacity-0"
                         style={{ '--i': index } as any}
                     >
                         <Link href={link.href}>{link.title}</Link>

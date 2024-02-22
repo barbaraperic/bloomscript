@@ -1,6 +1,6 @@
 'use client'
 import Modal from '@/app/components/Modal'
-import { mutableMethods } from '@/data/mutable'
+import { mutableMethods } from '@/data/iterators'
 
 export default function StackQueueItemPage({
     params,

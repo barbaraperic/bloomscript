@@ -1,0 +1,28 @@
+import MdxLayout from '../components/MdxLayout'
+import CodeSnippet from '../components/CodeSnippet'
+
+# Welcome to my MDX page!
+
+## This is some **bold** and _italics_ text.
+
+This is a list in markdown:
+
+-   One
+-   Two
+-   Three
+
+<CodeSnippet code={`
+const numbers = [1, 2, 3]; 
+let sum = 0;
+
+numbers.forEach(number => {
+  sum += number
+})
+
+console.log(sum) // 6
+
+`} />
+
+export default function MDXPage({ children }) {
+    return <MdxLayout>{children}</MdxLayout>
+}

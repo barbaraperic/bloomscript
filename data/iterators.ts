@@ -1,4 +1,4 @@
-export const mutableMethods = {
+export const iteratorsList = {
     map: {
         section1: '',
         section2: '',

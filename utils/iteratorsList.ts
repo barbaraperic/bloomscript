@@ -3,43 +3,52 @@ export const iteratorsList = [
         id: 0,
         title: 'forEach',
         description:
-            'creates a new array from calling a function for every array element',
+            'iterates through an array, invoking a function you specify for each element',
     },
     {
         id: 1,
         title: 'map',
         description:
-            'returns only items that match your specified condition(s)',
+            'works the same way as forEach, but returns an array containing the values returned by the function',
     },
     {
         id: 2,
         title: 'filter',
-        description: 'iterate and “reduce” an arrays values into one value',
+        description:
+            'selectively extract elements from arrays based on specified conditions',
     },
     {
         id: 3,
         title: 'find',
-        description: 'returns a new array, containing the joined arrays',
+        description:
+            'returns the value of the first element that passes a test',
     },
     {
         id: 4,
         title: 'findIndex',
-        description: 'returns a new array, containing the joined arrays',
+        description:
+            'returns the index of the first element in an array that passes a test',
     },
-    { id: 5, title: 'every', description: 'returns an array as a string' },
+    {
+        id: 5,
+        title: 'every',
+        description: 'tests whether all elements in the array pass the test',
+    },
     {
         id: 6,
         title: 'some',
-        description: 'returns selected elements in an array, as a new array',
+        description:
+            'tests whether at least one element in the array passes the test',
     },
     {
         id: 7,
         title: 'reduce',
-        description: 'returns true if an array contains a specified value',
+        description: 'reduces arrays to a single value',
     },
     {
         id: 8,
         title: 'reduceRight',
-        description: 'returns true if an array contains a specified value',
+        description:
+            'executes a reducer function for each array element, from right to left',
     },
 ]
