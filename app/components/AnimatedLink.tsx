@@ -13,7 +13,6 @@ export default function AnimatedLink({ href, children }: Props) {
             href={href}
             passHref
             onClick={() => {
-                console.log('clicked')
                 animatedRoute(href)
             }}
         >

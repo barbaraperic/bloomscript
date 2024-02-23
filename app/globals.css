@@ -36,7 +36,7 @@ body {
 }
 
 ::view-transition-new(root) {
-    animation: fade-and-scale-in 0.5s ease-in-out 1 forwards;
+    animation: fade-and-scale-in 0.5s ease-in-out 1 both;
 }
 
 @keyframes fade-and-scale-in {

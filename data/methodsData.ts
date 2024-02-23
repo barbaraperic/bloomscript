@@ -16,7 +16,7 @@ numbers.forEach(number => sum += number) // => sum = 6`,
         code: `const drinks = ["tea", "coffee", "chai"]; 
 
 drinks.map(drink => "Hot" + drink) // => ["Hot tea", "Hot coffee", "Hot chai"]`,
-        text: 'The function you pass to map() is invoked in the same way as a function passed to forEach(). For the map() method, however, the function you pass returns a value. Note that map() returns a new array: it does not modify the array it is invoked on. ',
+        text: 'The function you pass to map() is invoked in the same way as a function passed to forEach(). Note that map() returns a new array: it does not modify the array it is invoked on.',
     },
 
     {
@@ -26,7 +26,7 @@ drinks.map(drink => "Hot" + drink) // => ["Hot tea", "Hot coffee", "Hot chai"]`,
         code: `const numbers = [2, 4, 5, 6]; 
 
 numbers.filter(number => number % 2 === 0) // => [2, 4, 6];`,
-        text: 'When you want to filter the array to contain only the values that pass a specified criteria. Note that filter() returns a new array: it does not modify the array it is invoked on.',
+        text: 'When you want to filter the array to contain only the values that pass a specified criteria. Note that filter() returns a new array.',
     },
     {
         name: 'find',
