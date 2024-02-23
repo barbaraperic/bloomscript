@@ -53,9 +53,11 @@ body {
 @keyframes fade-and-scale-out {
     from {
         transform: none;
+        opacity: 1;
     }
 
     to {
+        opacity: 0;
         transform: translateY(100%);
     }
 }
