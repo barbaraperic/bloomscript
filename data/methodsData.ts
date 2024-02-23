@@ -7,7 +7,7 @@ export const methodsData = [
 let sum = 0;
 
 numbers.forEach(number => sum += number) // => sum = 6`,
-        text: 'forEach method iterates through an array, invoking a function you specify for each element',
+        text: 'forEach method iterates through an array, invoking a function you specify for each element.',
     },
     {
         name: 'map',
