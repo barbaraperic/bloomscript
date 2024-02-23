@@ -1,6 +1,7 @@
 'use client'
 import CodeSnippet from '@/app/components/CodeSnippet'
 import Modal from '@/app/components/Modal'
+import TagComponent from '@/app/components/Tag'
 import { methodsData } from '@/data/methodsData'
 import { usePathname } from 'next/navigation'
 
@@ -15,8 +16,9 @@ export default function MethodItemPage({ params }: { params: { id: string } }) {
                 <div className="flex justify-start mb-6">
                     <CodeSnippet code={method.code} />
                 </div>
-                <h2 className="text-2xl mb-2">When to use it?</h2>
-                <p className="max-w-[75%]">{method.text}</p>
+                {/* <h2 className="text-2xl mb-2">When to use it?</h2> */}
+                <p className="max-w-[75%] mb-9">{method.text}</p>
+                <TagComponent mutate={method.mutatesOriginalArray} />
             </Modal>
         </main>
     )

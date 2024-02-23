@@ -129,12 +129,12 @@ export const methodsList = [
                     'adds the specified elements to the end of an array',
             },
             {
-                id: 3,
+                id: 2,
                 title: 'fill',
                 description: 'removes the first element from an array ',
             },
             {
-                id: 4,
+                id: 3,
                 title: 'copyWithin',
                 description: 'sorts the elements of an array in place',
             },

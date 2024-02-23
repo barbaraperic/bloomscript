@@ -11,10 +11,14 @@ export default function MethodsPage({
     }
 }) {
     const { key } = searchParams
-
     const methods = methodsList.filter((item) => item.type === key)[0]
 
-    console.log('here')
+    const titleText = {
+        iterators: 'Iterator methods',
+        'stack-queue': 'Stack and queue methods',
+        'extract-insert': 'Extracting and inserting methods',
+        'search-sort': 'Search and sort methods',
+    } as any
 
     return (
         <main className="flex min-h-screen flex-col items-center p-10 space-y-5">
@@ -22,7 +26,7 @@ export default function MethodsPage({
                 <FiChevronLeft className="text-white w-6 h-6 hover:text-opacity-50 transition-all" />
             </Link>
             <h1 className="cursor-pointer text-2xl uppercase">
-                {methods.type}
+                {titleText[methods.type]}
             </h1>
             <CardList cards={methods.data} />
         </main>

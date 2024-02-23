@@ -23,6 +23,8 @@ export default function Modal({
         .filter(Boolean)
         .join()
 
+    console.log(title)
+
     return (
         <div className="w-full h-full p-10">
             <div className="mt-4 inline-block">
