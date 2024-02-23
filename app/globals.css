@@ -32,7 +32,7 @@ body {
 
 /* Views Animation */
 ::view-transition-old(root) {
-    animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
+    /* animation: fade-and-scale-out 0.5s ease-in-out 1 forwards; */
 }
 
 ::view-transition-new(root) {
