@@ -62,7 +62,7 @@ numbers.every(number => number > 0) // => false`,
         code: `const numbers = [1, -2, 3, -4]; 
 
 numbers.some(number => number > 0) // => true`,
-        text: 'it returns true if there exists at least one element in the array for which the predicate returns true and returns false if and only if the predicate returns false for all elements of the array',
+        text: 'it returns true if there exists at least one element in the array for which the predicate returns true and returns false if and only if the predicate returns false for all elements of the array.',
     },
     {
         name: 'reduce',
@@ -73,7 +73,7 @@ numbers.some(number => number > 0) // => true`,
 const sumOfNumbers = numbers.reduce((accumulator, currentValue) => {
     return accumulator += currentValue
 }, 0) // => 6`,
-        text: 'methods combine the elements of an array, using the function you specify, to produce a single value',
+        text: 'methods combine the elements of an array, using the function you specify, to produce a single value.',
     },
     {
         name: 'reduceRight',
@@ -84,7 +84,7 @@ const sumOfNumbers = numbers.reduce((accumulator, currentValue) => {
 const result = numbers.reduceRight((accumulator, currentValue) =>
   accumulator.concat(currentValue),
 ); // => [4, 5, 2, 3, 0, 1]`,
-        text: 'works just like reduce(), except that it processes the array from highest index to lowest (right-to-left), rather than from lowest to highest. ',
+        text: 'works just like reduce(), except that it processes the array from highest index to lowest (right-to-left), rather than from lowest to highest.',
     },
     {
         name: 'pop',
@@ -93,7 +93,7 @@ const result = numbers.reduceRight((accumulator, currentValue) =>
         code: `const numbers = [0, 1]; 
 
 numbers.pop() // [0]`,
-        text: 'pop() deletes the last element of an array, decrements the array length, and returns the value that it removed',
+        text: 'pop() deletes the last element of an array, decrements the array length, and returns the value that it removed.',
     },
     {
         name: 'push',
