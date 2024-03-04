@@ -21,13 +21,11 @@ export default function MethodsPage({
     } as any
 
     return (
-        <main className="flex min-h-screen flex-col items-center p-10 space-y-5">
-            <Link href="/" className="absolute left-10 top-16">
+        <main className="container">
+            <Link href="/" className="absolute left-10 top-[1rem]">
                 <FiChevronLeft className="text-white w-6 h-6 hover:text-opacity-50 transition-all" />
             </Link>
-            <h1 className="cursor-pointer text-2xl uppercase">
-                {titleText[methods.type]}
-            </h1>
+            <h1 className="page-title">{titleText[methods.type]}</h1>
             <CardList cards={methods.data} />
         </main>
     )

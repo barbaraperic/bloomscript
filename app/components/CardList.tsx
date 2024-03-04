@@ -29,8 +29,12 @@ export default function CardList({ cards }: { cards: any }) {
                     key={index}
                 >
                     <div className={styles['feature-content']}>
-                        <strong>{card.title}</strong>
-                        <span>{card.description}</span>
+                        <strong className={styles['feature-content-title']}>
+                            {card.title}
+                        </strong>
+                        <span className={styles['feature-content-text']}>
+                            {card.description}
+                        </span>
                     </div>
                 </div>
             ))}
