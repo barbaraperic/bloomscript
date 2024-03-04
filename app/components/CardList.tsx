@@ -1,5 +1,5 @@
 'use client'
-
+import styles from './CardList.module.css'
 import { useRef } from 'react'
 import handlePointerMove from '@/utils/handlePointerMove'
 import useAnimatedRouter from '@/app/hooks/useAnimatedRouter'
@@ -18,17 +18,17 @@ export default function CardList({ cards }: { cards: any }) {
 
     return (
         <div
-            className="features"
+            className={styles.features}
             onPointerMove={(e) => handlePointerMove(e, cardsRef)}
         >
             {cards.map((card: any, index: number) => (
                 <div
                     ref={addToRef}
                     onClick={() => animatedRoute(`${path}/${card.title}`)}
-                    className="feature"
+                    className={styles.feature}
                     key={index}
                 >
-                    <div className="feature-content">
+                    <div className={styles['feature-content']}>
                         <strong>{card.title}</strong>
                         <span>{card.description}</span>
                     </div>
