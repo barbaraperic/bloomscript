@@ -1,18 +1,19 @@
+
 name: Check Broken Links
 
 on:
   schedule:
-    - cron: "0 2 * * 0" # Runs every Sunday at 2 AM
+    - cron: "0 2 * * 0"
   workflow_dispatch:
 
 jobs:
   linkcheck:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
       ISSUE_LABEL: "Content"
       ISSUE_TITLE: "[CONTENT] Broken Links Found"
-      WORKFLOW_FILE_PATH: ".github/workflows/check-broken-links.yml"
+      WORKFLOW_FILE_PATH: "actions/workflows/check-broken-links.yml"
 
     steps:
       - name: Checkout
@@ -21,7 +22,7 @@ jobs:
       - name: Check links with linkcheck
         uses: filiph/linkcheck@3.0.0
         with:
-          arguments: "https://www.yourwebsite.com --external --skip-file linkcheck-skip-file.txt > linkcheck-results.txt"
+          arguments: https://www.filecoin.io --external --skip-file linkcheck-skip-file.txt > linkcheck-results.txt
         id: linkcheck
 
       - name: Upload linkcheck-results.txt as artifact
@@ -30,40 +31,3 @@ jobs:
         with:
           name: linkcheck-results
           path: linkcheck-results.txt
-
-      - name: Fetch existing issues
-        if: ${{ failure() }}
-        run: gh issue list --label "${ISSUE_LABEL}" --search "${ISSUE_TITLE}" --json number -q ".[].number" > issue_numbers.txt
-
-      - name: Close existing issues
-        if: ${{ failure() }}
-        run: |
-          while IFS= read -r ISSUE; do
-            echo "Attempting to close issue #$ISSUE"
-            gh issue close $ISSUE --repo ${{ github.repository }}
-          done < issue_numbers.txt
-
-      - name: Create new issue
-        if: ${{ failure() }}
-        id: create_issue
-        uses: dacbd/create-issue-action@main
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: ${{ env.ISSUE_TITLE }}
-          body: |
-            **Describe the issue**
-            During our scheduled (or manually-triggered) link check, the workflow [Check Broken Links](https://github.com/${{ github.repository }}/${{ env.WORKFLOW_FILE_PATH }}) identified one or more broken links in the repository.
-            Details of the broken links, including their locations and the reasons for failure, can be found in the `linkcheck-results.txt` artifact, at the end of the [failed run page here](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}).
-            🔗 **Workflow name** - `${{ github.workflow }}`
-            📇 **Job** -           `${{ github.job }}`
-            🚦 **Status** -        `${{ job.status }}`
-          labels: ${{ env.ISSUE_LABEL }}
-          assignees: your-github-username
-
-      - name: Update closed issues with new issue link
-        if: ${{ failure() }}
-        run: |
-          NEW_ISSUE_LINK="${{ steps.create_issue.outputs.html_url }}"
-          while IFS= read -r ISSUE; do
-            gh issue comment $ISSUE --body "Closed in favor of $NEW_ISSUE_LINK"
-          done < issue_numbers.txt
