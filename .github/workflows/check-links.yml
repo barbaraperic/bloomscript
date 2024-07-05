@@ -1,4 +1,3 @@
-
 name: Check Broken Links
 
 on:
@@ -10,7 +9,7 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
       ISSUE_LABEL: "Content"
       ISSUE_TITLE: "[CONTENT] Broken Links Found"
       WORKFLOW_FILE_PATH: "actions/workflows/check-broken-links.yml"
@@ -18,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
       - name: Check links with linkcheck
         uses: filiph/linkcheck@3.0.0
